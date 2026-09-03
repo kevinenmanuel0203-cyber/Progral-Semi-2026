@@ -22,6 +22,8 @@ namespace miPrimeraAplicacion
         }
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            //Tarea: Agrega la opcion de modulo, obtener el residuo de la division de num1 entre num2
+
             double num1 = 0, num2 = 0, resultado = 0, indexOpcion = 0;
             num1 = Double.Parse(txtNum1.Text); //txtNum1.Text > cadena= "5" => 5.0
             num2 = Double.Parse(txtNum2.Text);
