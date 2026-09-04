@@ -1,0 +1,5 @@
+C:\Users\kev\source\repos\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.csproj.AssemblyReference.cache
+C:\Users\kev\source\repos\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.Form1.resources
+C:\Users\kev\source\repos\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.Properties.Resources.resources
+C:\Users\kev\source\repos\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.csproj.GenerateResource.cache
+C:\Users\kev\source\repos\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.csproj.CoreCompileInputs.cache
