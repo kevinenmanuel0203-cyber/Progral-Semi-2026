@@ -3,35 +3,89 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data; //Esta es la libreria que me permite usar comando para trabajar con Bases de Datos
+using System.Data.SqlClient; //Esta Libreira me permite trabaja con SQL Server
 
-using System.Data;//Esta librería es necesaria para trabajar con bases de datos
-using System.Data.SqlClient;//Esta librería permite usar SQL Server
-
-namespace miPrimeraAplicacion
+namespace miPrimerProyectoCsharp
 {
     internal class Conexion
     {
-        //Definir los mienbros, atributos y metodos de la clase
-        public SqlConnection objConexion = new SqlConnection(); //Conectarse a la BD
-        public SqlCommand objComando = new SqlCommand(); //Ejecutar consultas (Insert, update, delete, select)
-        public SqlDataAdapter objDataAdapter = new SqlDataAdapter(); //un puente entre la BD y la aplicacion.
-        DataSet objDs = new DataSet(); //Representa una copia en memoria de la arquitectura de la BD
+        //Definir los miembros de la clase, atributos y metodos.
+        public SqlConnection objConexion = new SqlConnection(); //Conectarme a la BD.
+        public SqlCommand objComando = new SqlCommand(); //Ejecutar SQL en la BD. Lectura, Actualizacion, Eliminacion, Insercion.
+        public SqlDataAdapter objAdaptador = new SqlDataAdapter(); //un puente entre la BD y la aplicacion.
+        DataSet objDs = new DataSet(); //Es una representacion de la arquitectura de la BD en memoria.
 
-        public Conexion()         {//Constructor e inicializador de los mienbros de la clase
-            string cadenaConextion = "Data Source=DESKTOP-0F7K2A9;Initial Catalog=BD_Alumnos;Integrated Security=True";
-            objConexion.ConnectionString = cadenaConextion;
-            objConexion.Open();//abrir la BD
-    }
+        public Conexion()
+        { //Constructor. inicializador de los atributos
+            String cadenaConexion = "Data Source=DESKTOP-2J9FQ0A\\SQLEXPRESS;Initial Catalog=escuela;Integrated Security=True";
+            ObjConexion.ConnectionString = cadenaConexion;
+            ObjConexion.Open(); //Abrir la conexion a la BD
+        }
         public DataSet obtenerDatos()
         {
-            objDs.Clear();//Limpiar el datase.
-            objComando.Connection = objConexion;//Establcer la conexion para ejecutar consultas a la BD
+            objDs.Clear(); //Limpiar el DataSet
+            objComando.Connection = objConexion; //Establecer la conexion para ejecutar los comandos.
 
-            objDataAdapter.SelectCommand = objComando;
+            objAdaptador.SelectCommand = objComando; //Establecer el comando de seleccion
+
             objComando.CommandText = "SELECT * FROM alumnos";
-            objDataAdapter.Fill(objDs, "alumnos"); //tomamos los datos de la BD y llenamos el ds
+            objAdaptador.Fill(objDs, "alumnos");//Tomando los datos de la BD y llenando el DataSet
+
+            objComando.CommandText = "SELECT * FROM materias";
+            objAdaptador.Fill(objDs, "materias");//Tomando los datos de la BD y llenando el DataSet
+
+            objComando.CommandText = "SELECT * FROM materias";
+            objDataAdapter.Fill(objDs, "materias");
 
             return objDs;
         }
+        public string administrarDatosAlumnos(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO alumnos(codigo,nombre,direccion,telefono) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "', '" + datos[4] + "')";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE alumnos SET codigo='" + datos[1] + "', nombre='" + datos[2] + "', direccion='" + datos[3] + "', telefono='" + datos[4] + "' WHERE idAlumno='" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE FROM alumnos WHERE idAlumno='" + datos[0] + "'";
+            }
+            return ejecutarSQL(sql);
+        }
+        public string administrarDatosMaterias(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO materias(codigo,nombre,uv) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "')";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE materias SET codigo='" + datos[1] + "', nombre='" + datos[2] + "', uv='" + datos[3] + "' WHERE idMateria='" + datos[0] + "'";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE FROM materias WHERE idMateria='" + datos[0] + "'";
+            }
+            return ejecutarSQL(sql);
+        }
+        public String ejecutarSQL(String sql)
+        {
+            try
+            {
+                objComando.Connection = objConexion;
+                objComando.CommandText = sql;
+                return objComando.ExecuteNonQuery().ToString();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
-}   
+}

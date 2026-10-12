@@ -9,9 +9,11 @@ C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\b
 C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\bin\Debug\miPrimeraAplicacion.exe
 C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\bin\Debug\miPrimeraAplicacion.pdb
 C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.csproj.AssemblyReference.cache
-C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.Form1.resources
 C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.Properties.Resources.resources
 C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.csproj.GenerateResource.cache
 C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.csproj.CoreCompileInputs.cache
 C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.exe
 C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.pdb
+C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.Frmprincipal.resources
+C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.Frmalumnos.resources
+C:\Users\kev\Desktop\Progral-Semi-2026\miPrimeraAplicacion\miPrimeraAplicacion\obj\Debug\miPrimeraAplicacion.Fmprincipal.resources

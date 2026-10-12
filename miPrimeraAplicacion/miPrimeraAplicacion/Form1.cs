@@ -1,4 +1,5 @@
-﻿using System;
+﻿using miPrimerProyectoCsharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace miPrimeraAplicacion
 {
-    public partial class Form1 : Form
+    public partial class Frmprincipal : Form
     {
-        public Form1()
+        public Frmprincipal()
         {
             InitializeComponent();
         }
@@ -21,10 +22,6 @@ namespace miPrimeraAplicacion
         DataTable dt = new DataTable();
         string accion = "nuevo";
         int posicion = 0;
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            obtenerDatos();
-        }
         private void obtenerDatos()
         {
             ds.Clear();
@@ -104,5 +101,7 @@ namespace miPrimeraAplicacion
             posicion = 0;
             mostrarDatos();
         }
+
+        
     }
 }

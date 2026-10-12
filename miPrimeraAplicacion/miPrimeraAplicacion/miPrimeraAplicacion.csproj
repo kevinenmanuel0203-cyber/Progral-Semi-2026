@@ -62,16 +62,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Fmprincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fmprincipal.Designer.cs">
+      <DependentUpon>Fmprincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmalumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmalumnos.Designer.cs">
+      <DependentUpon>Frmalumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaterias.Designer.cs">
+      <DependentUpon>FrmMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPeriodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPeriodos.Designer.cs">
+      <DependentUpon>FrmPeriodos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Fmprincipal.resx">
+      <DependentUpon>Fmprincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmalumnos.resx">
+      <DependentUpon>Frmalumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaterias.resx">
+      <DependentUpon>FrmMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -103,6 +137,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>db_academica.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\notas.png" />
+    <None Include="Resources\periodos.png" />
+    <None Include="Resources\materias.png" />
+    <None Include="Resources\alumnos.png" />
+    <None Include="Resources\salir.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -1,7 +1,7 @@
 ﻿
 namespace miPrimeraAplicacion
 {
-    partial class Form1
+    partial class Frmprincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -37,9 +37,9 @@ namespace miPrimeraAplicacion
             this.txtdireccion = new System.Windows.Forms.TextBox();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblcodigo = new System.Windows.Forms.Label();
             this.txtcodigo = new System.Windows.Forms.TextBox();
-            this.lblcodigoalumno = new System.Windows.Forms.Label();
+            this.lblidalumno = new System.Windows.Forms.Label();
             this.grpnavegacion = new System.Windows.Forms.GroupBox();
             this.lblregistro = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -47,11 +47,21 @@ namespace miPrimeraAplicacion
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.grpedicion = new System.Windows.Forms.GroupBox();
+            this.btneliminar = new System.Windows.Forms.Button();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aplicacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.periodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbdatos.SuspendLayout();
             this.grpnavegacion.SuspendLayout();
             this.grpedicion.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbdatos
@@ -63,11 +73,11 @@ namespace miPrimeraAplicacion
             this.grbdatos.Controls.Add(this.txtdireccion);
             this.grbdatos.Controls.Add(this.txtnombre);
             this.grbdatos.Controls.Add(this.label2);
-            this.grbdatos.Controls.Add(this.label1);
+            this.grbdatos.Controls.Add(this.lblcodigo);
             this.grbdatos.Controls.Add(this.txtcodigo);
-            this.grbdatos.Controls.Add(this.lblcodigoalumno);
+            this.grbdatos.Controls.Add(this.lblidalumno);
             this.grbdatos.Enabled = false;
-            this.grbdatos.Location = new System.Drawing.Point(22, 12);
+            this.grbdatos.Location = new System.Drawing.Point(23, 37);
             this.grbdatos.Name = "grbdatos";
             this.grbdatos.Size = new System.Drawing.Size(467, 227);
             this.grbdatos.TabIndex = 0;
@@ -76,14 +86,14 @@ namespace miPrimeraAplicacion
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(88, 171);
+            this.txtemail.Location = new System.Drawing.Point(90, 163);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(100, 20);
             this.txtemail.TabIndex = 10;
             // 
             // txttelefono
             // 
-            this.txttelefono.Location = new System.Drawing.Point(88, 132);
+            this.txttelefono.Location = new System.Drawing.Point(90, 127);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(100, 20);
             this.txttelefono.TabIndex = 9;
@@ -91,27 +101,27 @@ namespace miPrimeraAplicacion
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 171);
+            this.label4.Location = new System.Drawing.Point(55, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "EMAIL";
+            this.label4.Text = "TEL:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 135);
+            this.label3.Location = new System.Drawing.Point(17, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "TELEFONO";
+            this.label3.Text = "DIRECCION:";
             // 
             // txtdireccion
             // 
             this.txtdireccion.Location = new System.Drawing.Point(90, 85);
             this.txtdireccion.Multiline = true;
             this.txtdireccion.Name = "txtdireccion";
-            this.txtdireccion.Size = new System.Drawing.Size(252, 35);
+            this.txtdireccion.Size = new System.Drawing.Size(169, 25);
             this.txtdireccion.TabIndex = 6;
             // 
             // txtnombre
@@ -124,20 +134,20 @@ namespace miPrimeraAplicacion
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 88);
+            this.label2.Location = new System.Drawing.Point(27, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "DIRECCION";
+            this.label2.Text = "NOMBRE:";
             // 
-            // label1
+            // lblcodigo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "NOMBRE";
+            this.lblcodigo.AutoSize = true;
+            this.lblcodigo.Location = new System.Drawing.Point(32, 54);
+            this.lblcodigo.Name = "lblcodigo";
+            this.lblcodigo.Size = new System.Drawing.Size(52, 13);
+            this.lblcodigo.TabIndex = 3;
+            this.lblcodigo.Text = "CODIGO:";
             // 
             // txtcodigo
             // 
@@ -146,14 +156,14 @@ namespace miPrimeraAplicacion
             this.txtcodigo.Size = new System.Drawing.Size(100, 20);
             this.txtcodigo.TabIndex = 2;
             // 
-            // lblcodigoalumno
+            // lblidalumno
             // 
-            this.lblcodigoalumno.AutoSize = true;
-            this.lblcodigoalumno.Location = new System.Drawing.Point(23, 16);
-            this.lblcodigoalumno.Name = "lblcodigoalumno";
-            this.lblcodigoalumno.Size = new System.Drawing.Size(49, 13);
-            this.lblcodigoalumno.TabIndex = 0;
-            this.lblcodigoalumno.Text = "CODIGO";
+            this.lblidalumno.AutoSize = true;
+            this.lblidalumno.Location = new System.Drawing.Point(59, 19);
+            this.lblidalumno.Name = "lblidalumno";
+            this.lblidalumno.Size = new System.Drawing.Size(21, 13);
+            this.lblidalumno.TabIndex = 0;
+            this.lblidalumno.Text = "ID:";
             // 
             // grpnavegacion
             // 
@@ -162,7 +172,7 @@ namespace miPrimeraAplicacion
             this.grpnavegacion.Controls.Add(this.button3);
             this.grpnavegacion.Controls.Add(this.button2);
             this.grpnavegacion.Controls.Add(this.button1);
-            this.grpnavegacion.Location = new System.Drawing.Point(22, 245);
+            this.grpnavegacion.Location = new System.Drawing.Point(23, 270);
             this.grpnavegacion.Name = "grpnavegacion";
             this.grpnavegacion.Size = new System.Drawing.Size(247, 71);
             this.grpnavegacion.TabIndex = 1;
@@ -174,9 +184,9 @@ namespace miPrimeraAplicacion
             this.lblregistro.AutoSize = true;
             this.lblregistro.Location = new System.Drawing.Point(110, 31);
             this.lblregistro.Name = "lblregistro";
-            this.lblregistro.Size = new System.Drawing.Size(36, 13);
+            this.lblregistro.Size = new System.Drawing.Size(37, 13);
             this.lblregistro.TabIndex = 11;
-            this.lblregistro.Text = "x de n";
+            this.lblregistro.Text = "1 de 2";
             // 
             // button4
             // 
@@ -220,14 +230,25 @@ namespace miPrimeraAplicacion
             // 
             // grpedicion
             // 
+            this.grpedicion.Controls.Add(this.btneliminar);
             this.grpedicion.Controls.Add(this.btnmodificar);
             this.grpedicion.Controls.Add(this.btnagregar);
-            this.grpedicion.Location = new System.Drawing.Point(275, 245);
+            this.grpedicion.Location = new System.Drawing.Point(276, 270);
             this.grpedicion.Name = "grpedicion";
-            this.grpedicion.Size = new System.Drawing.Size(214, 71);
+            this.grpedicion.Size = new System.Drawing.Size(359, 71);
             this.grpedicion.TabIndex = 2;
             this.grpedicion.TabStop = false;
             this.grpedicion.Text = "Edicion";
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.Location = new System.Drawing.Point(204, 19);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(101, 46);
+            this.btneliminar.TabIndex = 7;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.UseVisualStyleBackColor = true;
             // 
             // btnmodificar
             // 
@@ -251,23 +272,89 @@ namespace miPrimeraAplicacion
             this.btnagregar.UseVisualStyleBackColor = true;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
-            // Form1
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.aplicacionesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(805, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // aplicacionesToolStripMenuItem
+            // 
+            this.aplicacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alumnosToolStripMenuItem,
+            this.docentesToolStripMenuItem,
+            this.materiasToolStripMenuItem,
+            this.periodosToolStripMenuItem,
+            this.notasToolStripMenuItem});
+            this.aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
+            this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.aplicacionesToolStripMenuItem.Text = "Aplicaciones";
+            // 
+            // docentesToolStripMenuItem
+            // 
+            this.docentesToolStripMenuItem.Name = "docentesToolStripMenuItem";
+            this.docentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.docentesToolStripMenuItem.Text = "Docentes";
+            // 
+            // materiasToolStripMenuItem
+            // 
+            this.materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
+            this.materiasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.materiasToolStripMenuItem.Text = "Materias";
+            // 
+            // periodosToolStripMenuItem
+            // 
+            this.periodosToolStripMenuItem.Name = "periodosToolStripMenuItem";
+            this.periodosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.periodosToolStripMenuItem.Text = "Periodos";
+            // 
+            // notasToolStripMenuItem
+            // 
+            this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
+            this.notasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.notasToolStripMenuItem.Text = "Notas";
+            // 
+            // alumnosToolStripMenuItem
+            // 
+            this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
+            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alumnosToolStripMenuItem.Text = "Alumnos";
+            // 
+            // Frmprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 358);
+            this.ClientSize = new System.Drawing.Size(805, 358);
             this.Controls.Add(this.grpedicion);
             this.Controls.Add(this.grpnavegacion);
             this.Controls.Add(this.grbdatos);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Frmprincipal";
+            this.Text = "SISTEMA ACADEMICO";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            
             this.grbdatos.ResumeLayout(false);
             this.grbdatos.PerformLayout();
             this.grpnavegacion.ResumeLayout(false);
             this.grpnavegacion.PerformLayout();
             this.grpedicion.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -276,7 +363,7 @@ namespace miPrimeraAplicacion
         private System.Windows.Forms.GroupBox grbdatos;
         private System.Windows.Forms.GroupBox grpnavegacion;
         private System.Windows.Forms.GroupBox grpedicion;
-        private System.Windows.Forms.Label lblcodigoalumno;
+        private System.Windows.Forms.Label lblidalumno;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txttelefono;
@@ -285,7 +372,7 @@ namespace miPrimeraAplicacion
         private System.Windows.Forms.TextBox txtdireccion;
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblcodigo;
         private System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.Label lblregistro;
         private System.Windows.Forms.Button button4;
@@ -293,6 +380,15 @@ namespace miPrimeraAplicacion
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnmodificar;
         private System.Windows.Forms.Button btnagregar;
+        private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aplicacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem docentesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem periodosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alumnosToolStripMenuItem;
     }
 }
 
