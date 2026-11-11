@@ -1,0 +1,5 @@
+wwwroot\img\logo.webp
+wwwroot\views\index.html
+wwwroot\views\alumno.html
+C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\wwwroot\views\index.html
+C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\wwwroot\views\alumno.html
