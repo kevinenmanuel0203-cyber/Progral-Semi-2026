@@ -3,82 +3,70 @@
         <div class="card-header">
             <div class="d-flex">
                 Busqueda de Alumnos
-
                 <div class="ms-auto">
                     <button data-ng-form="alumno" type="button" class="btn-close" aria-label="Close"></button>
                 </div>
             </div>
         </div>
-        <div class="card-body"
-             <table id="tlConsultaAlumnos" class="table table-striped table-hover">
-                 <thead>
-                     <tr>
-                         <th colspan="6">
-                             <input type="search" class="form-control" placeholder="Buscar alumnos por codigo, nombre"
-                                    name="txtBuscarAlumno" id="txtBuscar Alumno"
-                         </th>
-                     </tr>
-                     <tr>
-                         <th>CODIGO</th>
-                         <th>NOMBRE</th>
-                         <th>DIRECCION</th>
-                         <th>TELEFONO</th>
-                         <th>EMAIL</th>
-                         <th></th>
-                     </tr>
-                 </thead>
-                 <tbody></tbody>
-             </table>
+        <div class="card-body">
+            <table id="tblConsultaAlumnos" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="6">
+                            <input type="search" class="form-control" placeholder="Buscar alumnos por codigo, nombre"
+                                   name="txtBuscarAlumno" id="txtBuscarAlumno">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>CODIGO</th>
+                        <th>NOMBRE</th>
+                        <th>DIRECCION</th>
+                        <th>TELEFONO</th>
+                        <th>EMAIL</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
 </form>
 <script>
-txtBuscarAlumno.addEventListener('keyup', e => {
-    listarAlumnos(txtBuscarAlumno.value);
-});
-async function listarAlumnos(buscar) {
-    let alumnos = await ObtenerAlumnos(buscar);
-    filas = '';
-    alumnos.forEach(alumno => {
-        filas = + '
-        <tr>
-            <td>${ alumno.codigo } </td>
-                <td> ${ alumno.nombre } </td>
-                <td> ${ alumno.direccion } </td>
-                <td> ${ alumno.telefono } </td>
-                <td> ${ alumno.email } </td>
-                <td></td>
-         </tr>
-            ';
-    });
-    document.querySelector("#tblConsultaAlumnos > tbody").innerHTML = filas;
-}
-            
-      
-var accion = 'nuevo',
-    idAlumno = 0;
-frmAlumno.addEventListener('submit', e => {
-    e.preventDefault();
-    guardarAlumno();
-});
-async function guardarAlumno() {
-    let datos = {
-        codigo: txtCodigoAlumno.value,
-        nombre: txtNombreAlumno.value,
-        direccion: txtDireccionAlumno.value,
-        telefono: txtTelefonoAlumno.value,
-        email: txtEmailAlumno.value,
-    },
-        url = 'https://localhost:44312/api/Alumnos',
-        method = 'POST';
-    if (accion == 'modificar') {
-        method = 'PUT';
-        url = `https://localhost:44312/api/Alumnos\${idAlumno}`;
-        datos.idAlumno = idAlumno;
-    }
-    const respuesta = await fetch(url, {
-        method,
-        header: { "Content-Type": "application/json" },
-        body:JSON.stringify(datos)
-    }), alumnos = await respuesta.json();
-}</script>
+        // @ts-nocheck
+        const inputBuscar = document.getElementById('txtBuscarAlumno');
+
+        inputBuscar.addEventListener('keyup', () => {
+            listarAlumnos(inputBuscar.value);
+        });
+
+        async function ObtenerAlumnos(buscar = '') {
+            const url = `https://localhost:44312/api/Alumnos/Buscar?buscar=${encodeURIComponent(buscar)}`;
+            const respuesta = await fetch(url);
+            if (!respuesta.ok) {
+                return [];
+            }
+            return await respuesta.json();
+        }
+
+        async function listarAlumnos(buscar = '') {
+            const alumnos = await ObtenerAlumnos(buscar);
+            let filas = '';
+            for (const alumno of alumnos) {
+                filas += `
+                    <tr>
+                        <td>${alumno.codigo}</td>
+                        <td>${alumno.nombre}</td>
+                        <td>${alumno.direccion}</td>
+                        <td>${alumno.telefono}</td>
+                        <td>${alumno.email}</td>
+                        <td></td>
+                    </tr>`;
+            }
+            const cuerpo = document.querySelector('#tblConsultaAlumnos > tbody');
+            if (cuerpo) {
+                cuerpo.innerHTML = filas;
+            }
+        }
+
+        listarAlumnos('');
+</script>

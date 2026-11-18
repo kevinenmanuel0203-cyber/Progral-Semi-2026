@@ -166,5 +166,6 @@ C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\bin\Debug\net10.0\runtimes\
 C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\bin\Debug\net10.0\runtimes\win-arm64\native\msalruntime_arm64.dll
 C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime.dll
 C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
-C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\obj\Debug\net10.0\compressed\qfdz7oa465-{0}-p9nxej94m5-p9nxej94m5.gz
-C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\obj\Debug\net10.0\compressed\q9q0gic0ss-{0}-wu7kd8wr7r-wu7kd8wr7r.gz
+C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\obj\Debug\net10.0\compressed\q9q0gic0ss-{0}-l1fs77fxte-l1fs77fxte.gz
+C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\obj\Debug\net10.0\compressed\qfdz7oa465-{0}-q44unf7g48-q44unf7g48.gz
+C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\obj\Debug\net10.0\compressed\49wpfja8c0-{0}-rga8vaougq-rga8vaougq.gz

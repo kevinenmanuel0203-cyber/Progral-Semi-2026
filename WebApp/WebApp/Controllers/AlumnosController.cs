@@ -7,30 +7,32 @@ using WebApp.Models;
 public class AlumnosController : ControllerBase
 {
     private readonly MyDbContext _context;
+
     public AlumnosController(MyDbContext context)
     {
         _context = context;
     }
 
-    // GET: api/Alumno
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Alumno>>> GetAlumno()
+    public async Task<ActionResult<IEnumerable<Alumno>>> GetAlumnos()
     {
         return await _context.Alumnos.ToListAsync();
     }
 
-    //GET: api/Alumno/Buscar
     [HttpGet("Buscar")]
-    public async Task<ActionResult<IEnumerable<Alumno>>> BuscarAlumno([FromQuery] AlumnoBuquedaParametros)
+    public async Task<ActionResult<IEnumerable<Alumno>>> BuscarAlumno([FromQuery] AlumnoBusquedaParametros parametros)
     {
         var query = _context.Alumnos.AsQueryable();
-        if (!string.IsNullOrEmpty(parametros.buscar))
+
+        if (!string.IsNullOrEmpty(parametros.Buscar))
         {
-            consulta = consulta.Where(Alumno => Alumno.nombre.Contains(parametros.buscar));
+            query = query.Where(a => a.Nombre.Contains(parametros.Buscar));
         }
+
+        return await query.ToListAsync();
     }
-    // GET: api/Alumno/5
-    [HttpGet("{idalumno}")]
+
+    [HttpGet("{idalumno:int}")]
     public async Task<ActionResult<Alumno>> GetAlumno(int idalumno)
     {
         var alumno = await _context.Alumnos.FindAsync(idalumno);
@@ -43,10 +45,8 @@ public class AlumnosController : ControllerBase
         return alumno;
     }
 
-    // PUT: api/Alumno/5
-    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-    [HttpPut("{idalumno}")]
-    public async Task<IActionResult> PutAlumno(int? idalumno, Alumno alumno)
+    [HttpPut("{idalumno:int}")]
+    public async Task<IActionResult> PutAlumno(int idalumno, Alumno alumno)
     {
         if (idalumno != alumno.IdAlumno)
         {
@@ -65,31 +65,26 @@ public class AlumnosController : ControllerBase
             {
                 return NotFound();
             }
-            else
-            {
-                throw;
-            }
+            throw;
         }
 
         return NoContent();
     }
 
-    // POST: api/Alumno
-    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPost]
     public async Task<ActionResult<Alumno>> PostAlumno(Alumno alumno)
     {
         _context.Alumnos.Add(alumno);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction("GetAlumno", new { idalumno = alumno.IdAlumno }, alumno);
+        return CreatedAtAction(nameof(GetAlumno), new { idalumno = alumno.IdAlumno }, alumno);
     }
 
-    // DELETE: api/Alumno/5
-    [HttpDelete("{idalumno}")]
-    public async Task<IActionResult> DeleteAlumno(int? idalumno)
+    [HttpDelete("{idalumno:int}")]
+    public async Task<IActionResult> DeleteAlumno(int idalumno)
     {
         var alumno = await _context.Alumnos.FindAsync(idalumno);
+
         if (alumno == null)
         {
             return NotFound();
@@ -101,7 +96,7 @@ public class AlumnosController : ControllerBase
         return NoContent();
     }
 
-    private bool AlumnoExists(int? idalumno)
+    private bool AlumnoExists(int idalumno)
     {
         return _context.Alumnos.Any(e => e.IdAlumno == idalumno);
     }
