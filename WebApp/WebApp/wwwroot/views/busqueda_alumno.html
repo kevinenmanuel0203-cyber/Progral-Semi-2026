@@ -1,10 +1,11 @@
-﻿<form id="frmBusquedaAlumno">
+﻿﻿<form id="frmBusquedaAlumno">
     <div class="card theme-secondary" style="min-width:700px;">
         <div class="card-header">
             <div class="d-flex">
                 Busqueda de Alumnos
+
                 <div class="ms-auto">
-                    <button data-ng-form="alumno" type="button" class="btn-close" aria-label="Close"></button>
+                    <button data-form="busqueda_alumno" type="button" class="btn-close" aria-label="Close"></button>
                 </div>
             </div>
         </div>
@@ -14,7 +15,7 @@
                     <tr>
                         <th colspan="6">
                             <input type="search" class="form-control" placeholder="Buscar alumnos por codigo, nombre"
-                                   name="txtBuscarAlumno" id="txtBuscarAlumno">
+                                   name="txtBuscarAlumno" id="txtBuscarAlumno" />
                         </th>
                     </tr>
                     <tr>
@@ -32,41 +33,44 @@
     </div>
 </form>
 <script>
-        // @ts-nocheck
-        const inputBuscar = document.getElementById('txtBuscarAlumno');
+listarAlumnos();
 
-        inputBuscar.addEventListener('keyup', () => {
-            listarAlumnos(inputBuscar.value);
+txtBuscarAlumno.addEventListener('keyup', e => {
+        listarAlumnos(txtBuscarAlumno.value);
         });
-
-        async function ObtenerAlumnos(buscar = '') {
-            const url = `https://localhost:44312/api/Alumnos/Buscar?buscar=${encodeURIComponent(buscar)}`;
-            const respuesta = await fetch(url);
-            if (!respuesta.ok) {
-                return [];
-            }
-            return await respuesta.json();
-        }
-
-        async function listarAlumnos(buscar = '') {
-            const alumnos = await ObtenerAlumnos(buscar);
-            let filas = '';
-            for (const alumno of alumnos) {
+        async function listarAlumnos(buscar='') {
+            let alumnos = await obtenerDatos(buscar, 'Alumnos'),
+                filas = '';
+            alumnos.forEach(alumno => {
                 filas += `
-                    <tr>
+                    <tr onClick='mostrarDatosAlumno(${JSON.stringify(alumno)})'>
                         <td>${alumno.codigo}</td>
                         <td>${alumno.nombre}</td>
                         <td>${alumno.direccion}</td>
                         <td>${alumno.telefono}</td>
                         <td>${alumno.email}</td>
-                        <td></td>
-                    </tr>`;
+                        <td><input type="button" onClick='eliminarAlumno(${JSON.stringify(alumno)}, event)'  class="btn btn-outline-danger btn-sm" value="DEL" /></td>
+                    </tr>
+                `;
+            });
+            document.querySelector("#tblConsultaAlumnos > tbody").innerHTML = filas;
+}
+async function eliminarAlumno(alumno, e) {
+        e.preventDefault();
+
+        if (confirm(`Esta seguro de eliminar ${alumno.nombre.trim()}?`)) {
+            const respuesta = await fetch(`/api/Alumnos/${alumno.idAlumno}`, {
+                method: 'DELETE',
+                headers: { "Content-Type": "application/json" }
+            }), datos = await respuesta.text();
+            if (datos && datos.length > 0) {
+                alert(`Error ${datos}`);
+                return;
             }
-            const cuerpo = document.querySelector('#tblConsultaAlumnos > tbody');
-            if (cuerpo) {
-                cuerpo.innerHTML = filas;
-            }
+            listarAlumnos(txtBuscarAlumno.value || '');
         }
 
-        listarAlumnos('');
-</script>
+}
+function mostrarDatosAlumno(alumno) {
+        modificarAlumno(alumno);
+}

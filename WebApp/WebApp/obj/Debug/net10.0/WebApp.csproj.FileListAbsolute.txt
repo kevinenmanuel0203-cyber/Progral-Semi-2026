@@ -169,3 +169,6 @@ C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\bin\Debug\net10.0\runtimes\
 C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\obj\Debug\net10.0\compressed\q9q0gic0ss-{0}-l1fs77fxte-l1fs77fxte.gz
 C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\obj\Debug\net10.0\compressed\qfdz7oa465-{0}-q44unf7g48-q44unf7g48.gz
 C:\Users\kev\Desktop\Progral-Semi-2026\WebApp\WebApp\obj\Debug\net10.0\compressed\49wpfja8c0-{0}-rga8vaougq-rga8vaougq.gz
+C:\Users\kevin\Desktop\Progral-Semi-2026.git\WebApp\WebApp\obj\Debug\net10.0\WebApp.dll
+C:\Users\kevin\Desktop\Progral-Semi-2026.git\WebApp\WebApp\obj\Debug\net10.0\refint\WebApp.dll
+C:\Users\kevin\Desktop\Progral-Semi-2026.git\WebApp\WebApp\obj\Debug\net10.0\WebApp.pdb
